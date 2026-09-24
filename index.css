@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bebas Neue", Impact, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --color-pitch-950: #070b1a;
+  --color-pitch-900: #0d1430;
+  --color-pitch-800: #151f47;
+  --color-pitch-700: #22306a;
+  --color-lime: #c6ff3d;
+  --color-magenta: #ff2d87;
+  --color-gold: #f5c542;
+}
+
+html, body { background: var(--color-pitch-950); color: #e8ecff; }
+body {
+  background-image:
+    radial-gradient(1200px 500px at 50% -200px, rgba(198,255,61,.10), transparent 70%),
+    radial-gradient(800px 400px at 100% 0, rgba(255,45,135,.10), transparent 70%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+@utility card { @apply rounded-2xl border border-white/10 bg-pitch-900/80 backdrop-blur; }
+@utility btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 font-semibold transition active:scale-95 disabled:opacity-40 disabled:pointer-events-none; }
+@utility btn-primary { @apply btn bg-lime text-pitch-950 hover:brightness-110; }
+@utility btn-ghost { @apply btn border border-white/15 hover:bg-white/10; }
+@utility btn-danger { @apply btn border border-magenta/50 text-magenta hover:bg-magenta/10; }
+@utility input { @apply w-full rounded-xl border border-white/15 bg-pitch-950/70 px-3 py-2 outline-none focus:border-lime; }
+@utility label { @apply mb-1 block text-xs font-semibold uppercase tracking-wider text-white/50; }
+@utility h-title { @apply font-display text-4xl tracking-wide sm:text-5xl; }
